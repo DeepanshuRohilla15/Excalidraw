@@ -1,5 +1,5 @@
 {
-  "name": "@repo/db",
+  "name": "db",
   "version": "1.0.0",
   "main": "index.js",
   "exports": {
@@ -16,7 +16,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "@prisma/client": "6.6.0",
-    "prisma": "^6.6.0"
+    "@prisma/client": "6.7.0",
+    "prisma": "^6.7.0"
   }
 }
