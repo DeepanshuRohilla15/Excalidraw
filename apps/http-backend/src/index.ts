@@ -5,7 +5,9 @@ import { middleware } from "./middleware";
 import {CreateUserSchema, SigninSchema, CreateRoomSchema} from "@repo/common/types";
 import { prismaClient } from "@repo/db/client";
 
+
 const app = express();
+app.use(express.json());
 
 app.post("/signup", async (req, res) => {
 
@@ -18,22 +20,11 @@ app.post("/signup", async (req, res) => {
         return;
     }
 
-    try{
-        await prismaClient.user.create({
-            data: {
-                email: parsedData.data.username,
-                password: parsedData.data.password,
-                username: parsedData.data.username
-            }
-        })
+        
         res.json({
             userId: "123"
         })
-    } catch(e) {
-        res.status(411).json({
-            message: "User already exists with this username"
-        })
-    }
+    
 
     
 
